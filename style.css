@@ -92,9 +92,18 @@ input.success {
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-5px); }
-  40%, 80% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
 }
 
 button {
@@ -116,7 +125,7 @@ button:hover {
   transform: translateY(-2px);
 }
 
-.icon-button{
+.icon-button {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.8rem;
@@ -136,6 +145,47 @@ button:hover {
   background-color: #fff8e1;
   transform: translateY(-1px);
   box-shadow: 0 5px 15px rgba(255, 167, 38, 0.3);
+}
+
+.message-hidden {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.message-success {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: visible;
+  opacity: 1;
+  padding: 12px 24px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  animation: fadeInDown 0.5s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 @media (max-width: 480px) {
